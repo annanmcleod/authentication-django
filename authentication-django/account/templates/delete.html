@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Delete</title>
+{% endblock title %}
+
+{% block content %}
+    <p>Are you sure you want to delete "{{item}}"?</p>
+    <form method='POST' action="{% url 'deleteProfile' item.id%}">
+        {% csrf_token %}
+        <a class="cancel_button" href="{% url 'home' %}">Cancel</a>
+        <input type='submit' name='Delete Profile'>
+      
+{% endblock content %}

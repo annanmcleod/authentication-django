@@ -1,0 +1,28 @@
+<h3>Sign Up</h3>
+
+<form method = "POST" action = "">
+    {% csrf_token %}
+    {% comment %} {{form.username.label}} {% endcomment %}
+    <p>Username:</p>
+    {{form.username}}
+
+    {% comment %} {{form.email.label}} {% endcomment %}
+    <p>Email:</p>
+    {{form.email}}
+
+    <p>Password:</p>
+    {{form.password1}}
+
+    <p>Confirm Password:</p>
+    {{form.password2}}
+
+    {{form.errors}}
+
+
+   <br>
+    <input type = "submit" name = "Create User" value = "Sign Up">
+   </br>   
+    <div>
+        Already have an account? <a href = "{% url "log_in" %}">Login</a>
+    </div>
+</form> 
